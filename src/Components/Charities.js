@@ -47,4 +47,18 @@ export default function Charities() {
       tempLink.searchParams.set("api_key", process.env.REACT_APP_API_KEY);
     }
     setAllOrganisationsUrl(tempLink);
+  };  const handleLocationInputChange = (e) => {
+    setOrganisationLocation(e.target.value);
+  };
+  const handleCategoryInputChange = (e) => {
+    setOrganisationCategory(e.target.value);
+  };
+  const filterOrganisationsByLocation = (list, location = "") => {
+    if (location === "") {
+      return list;
+    } else {
+      return list.filter((org) => {
+        return org.country.toLowerCase().includes(location.toLowerCase());
+      });
+    }
   };
