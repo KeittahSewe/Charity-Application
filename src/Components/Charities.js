@@ -66,4 +66,25 @@ export default function Charities() {
     nextBatch.searchParams.set("nextOrgId", batch);
     nextBatch.searchParams.set("api_key", process.env.REACT_APP_API_KEY);
     setAllOrganisationsUrl(nextBatch);
-  };
+  }; useEffect(() => {
+    fetchAllOrganisations();
+  }, [fetchAllOrganisations]);
+  return (
+    <div>
+      <p className="text-center fs-1">
+        <strong>Welcome to Charity-App!</strong>
+      </p>
+      <div className="text-center">
+        <SearchForm
+          onSearch={handleSubmitForm}
+          onLocationInputChange={handleLocationInputChange}
+          onCategoryInputChange={handleCategoryInputChange}
+          location={organisationLocation}
+          category={organisationCategory}
+          isFetched={isFetched}
+          organizations={allOrganisations}
+          locations={organisationLocation}
+          onSearchByLocation={filterOrganisationsByLocation}
+          url={
+            "https://api.globalgiving.org/api/public/orgservice/organization/"
+          }
