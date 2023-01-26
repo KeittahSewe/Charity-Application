@@ -61,4 +61,9 @@ export default function Charities() {
         return org.country.toLowerCase().includes(location.toLowerCase());
       });
     }
+  }; const handleFetchNextBatch = (batch) => {
+    const nextBatch = new URL(ORGANISATIONS_ENDPOINT);
+    nextBatch.searchParams.set("nextOrgId", batch);
+    nextBatch.searchParams.set("api_key", process.env.REACT_APP_API_KEY);
+    setAllOrganisationsUrl(nextBatch);
   };
