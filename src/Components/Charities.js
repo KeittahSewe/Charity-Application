@@ -87,4 +87,16 @@ export default function Charities() {
           onSearchByLocation={filterOrganisationsByLocation}
           url={
             "https://api.globalgiving.org/api/public/orgservice/organization/"
-          }
+          } />
+          </div>
+          <div>
+            <br></br>
+            <div className="d-grid gap-2 col-6 mx-auto" >
+            <button className="btn btn-dark btn-lg  " type="button" onClick={() => handleFetchNextBatch(nextOrgId)}>
+              Next Batch
+            </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
