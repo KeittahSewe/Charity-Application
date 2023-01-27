@@ -23,7 +23,7 @@ Some features of this program's include:
 5. React JS
 
 ## Deployment
-After deploying the project.....minimize the window to 80%
+After deploying the project.....minimize the window to 90%
 ```bash
 https://charity-application.vercel.app/
 ```
