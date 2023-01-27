@@ -40,3 +40,17 @@ export default function SearchForm({
          </div>
          </div>
       </form>
+           <hr />
+      {isFetched ? (
+        <OrganizationsList
+          organizations={organizations}
+          locations={locations}
+          onSearchByLocation={onSearchByLocation}
+          url={url}
+        />
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+}
