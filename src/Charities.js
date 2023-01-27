@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-import SearchForm from "./SearchForm";
+import SearchForm from "./Search.js";
 const ORGANISATIONS_ENDPOINT = new URL(
   "https://api.globalgiving.org/api/public/orgservice/all/organizations/"
 );
