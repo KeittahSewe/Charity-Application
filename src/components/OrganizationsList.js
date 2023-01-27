@@ -13,3 +13,18 @@ export default function OrganizationsList({
     );
   });
 }
+const Organization = ({ organization, url }) => {
+    const link = new URL(`${url}${organization.id}`);
+    link.searchParams.set("api_key", process.env.REACT_APP_API_KEY);
+    return (
+      <div key={organization.id}>
+         <img src={organization.logoUrl} alt="random"/>
+        <span style={{ fontWeight: "bold" }}>
+          <a href={link.href}>{organization.name}</a>
+        </span>
+        <span>{organization.country}</span>
+        <span>{organization.city}</span>
+        <span>{organization.mission}</span>
+      </div>
+    );
+  };
